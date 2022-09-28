@@ -44,7 +44,13 @@ class KYRender {
         return resultAtt
     }
 
-    static func buildViews(cssNode: KYCssNode, htmlNode: KYHtmlNode, parentView: UIView, relateView: UIView?, padding: UIEdgeInsets, parentNode: KYHtmlNode?) -> UIView {
+    static func buildViews(cssNode: KYCssNode,
+                           htmlNode: KYHtmlNode,
+                           parentView: UIView,
+                           relateView: UIView?,
+                           padding: UIEdgeInsets,
+                           parentNode: KYHtmlNode?,
+                           isRootNode: Bool) -> UIView {
         let view = UIView()
         let resultAtt = getAttribute(cssNode: cssNode, htmlNode: htmlNode)
 
@@ -112,18 +118,16 @@ class KYRender {
             }
             if size.width != 0 {
                 make.width.equalTo(size.width)
-            } else if !firstBuild, let marginRight = marginRight {
+            } else if let marginRight = marginRight {
                 make.right.equalTo(parentView.snp.right).offset(-marginRight)
             }
             if size.height != 0 {
                 make.height.equalTo(size.height)
             }
-            if !firstBuild && isLast {
+            if !isRootNode && isLast {
                 make.bottom.equalTo(parentView.snp.bottom).offset(-marginBottom)
             }
         }
-
-        firstBuild = false
         return view
     }
 }

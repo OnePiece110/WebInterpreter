@@ -46,8 +46,6 @@ public enum CssValue {
     }
 }
 
-var firstBuild = true
-
 class KYCssNode {
     var blockTags = [String : [String: CssValue]]()
     var idTags = [String : [String: CssValue]]()

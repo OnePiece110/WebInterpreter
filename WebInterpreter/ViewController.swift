@@ -66,14 +66,14 @@ class ViewController: UIViewController {
             let node = try htmlParse.parse()
             let cssParser = try KYCssParser(text: css)
             let cssNode = try cssParser.parse()
-            _ = render(superView: self.view, htmlNode: node, cssNode: cssNode, relateView: nil, padding: .zero, parentNode: nil)
+            _ = render(superView: self.view, htmlNode: node, cssNode: cssNode, relateView: nil, padding: .zero, parentNode: nil, isRootNode: true)
         } catch {
             debugPrint(error)
         }
     }
 
-    func render(superView: UIView,htmlNode: KYHtmlNode, cssNode: KYCssNode, relateView: UIView?, padding: UIEdgeInsets, parentNode: KYHtmlNode?) -> UIView {
-        let view = KYRender.buildViews(cssNode: cssNode, htmlNode: htmlNode, parentView: superView, relateView: relateView, padding: padding, parentNode: parentNode)
+    func render(superView: UIView,htmlNode: KYHtmlNode, cssNode: KYCssNode, relateView: UIView?, padding: UIEdgeInsets, parentNode: KYHtmlNode?, isRootNode: Bool) -> UIView {
+        let view = KYRender.buildViews(cssNode: cssNode, htmlNode: htmlNode, parentView: superView, relateView: relateView, padding: padding, parentNode: parentNode, isRootNode: isRootNode)
         renderList(superView: view, htmlNode: htmlNode.child, cssNode: cssNode, relateView: relateView, padding: KYRender.getPadding(cssNode: cssNode, htmlNode: htmlNode), parentNode: htmlNode)
         return view
     }
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     func renderList(superView: UIView, htmlNode: [KYHtmlNode], cssNode: KYCssNode, relateView: UIView?, padding: UIEdgeInsets,parentNode: KYHtmlNode?) {
         var preView: UIView?
         htmlNode.forEach {
-            preView = render(superView: superView, htmlNode: $0, cssNode: cssNode, relateView: preView, padding: padding, parentNode: parentNode)
+            preView = render(superView: superView, htmlNode: $0, cssNode: cssNode, relateView: preView, padding: padding, parentNode: parentNode, isRootNode: false)
         }
     }
 
