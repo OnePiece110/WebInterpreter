@@ -58,11 +58,9 @@ class ViewController: UIViewController {
     }
     """#
 
-    let test = CurrentValueSubject<String, Never>("")
-    var cancelAble: AnyCancellable?
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         do {
             let htmlParse = try KYHtmlParser(text: html)
             let node = try htmlParse.parse()
@@ -72,18 +70,11 @@ class ViewController: UIViewController {
         } catch {
             debugPrint(error)
         }
-        let test2 = test
-        cancelAble = test2.sink { string in
-            debugPrint(string)
-        }
-        test.send("1")
-        test.send("2")
-
     }
 
     func render(superView: UIView,htmlNode: KYHtmlNode, cssNode: KYCssNode, relateView: UIView?, padding: UIEdgeInsets, parentNode: KYHtmlNode?) -> UIView {
-        let view = cssNode.buildViews(parentView: superView, htmlNode: htmlNode, relateView: relateView, padding: padding, parentNode: parentNode)
-        renderList(superView: view, htmlNode: htmlNode.child, cssNode: cssNode, relateView: relateView, padding: cssNode.getPadding(htmlNode: htmlNode), parentNode: htmlNode)
+        let view = KYRender.buildViews(cssNode: cssNode, htmlNode: htmlNode, parentView: superView, relateView: relateView, padding: padding, parentNode: parentNode)
+        renderList(superView: view, htmlNode: htmlNode.child, cssNode: cssNode, relateView: relateView, padding: KYRender.getPadding(cssNode: cssNode, htmlNode: htmlNode), parentNode: htmlNode)
         return view
     }
 

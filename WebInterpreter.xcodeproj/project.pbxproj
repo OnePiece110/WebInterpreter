@@ -11,6 +11,8 @@
 		3D0D88DF28D3217F007C402D /* KYCssLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D88DE28D3217F007C402D /* KYCssLexer.swift */; };
 		3D0D88E128D3263A007C402D /* KYCssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D88E028D3263A007C402D /* KYCssParser.swift */; };
 		3D0D88E328D32C29007C402D /* KYCssNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D88E228D32C29007C402D /* KYCssNode.swift */; };
+		3D699F5F28E3E0730013FE9F /* KYRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D699F5E28E3E0730013FE9F /* KYRender.swift */; };
+		3D699F6128E3E6A90013FE9F /* KYWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D699F6028E3E6A90013FE9F /* KYWrapper.swift */; };
 		3DB5385428D422E8000754C7 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5385328D422E8000754C7 /* UIColorExtensions.swift */; };
 		3DDAE7B228D166CB0038BE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAE7B128D166CB0038BE0E /* AppDelegate.swift */; };
 		3DDAE7B428D166CB0038BE0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAE7B328D166CB0038BE0E /* SceneDelegate.swift */; };
@@ -30,6 +32,8 @@
 		3D0D88DE28D3217F007C402D /* KYCssLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCssLexer.swift; sourceTree = "<group>"; };
 		3D0D88E028D3263A007C402D /* KYCssParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCssParser.swift; sourceTree = "<group>"; };
 		3D0D88E228D32C29007C402D /* KYCssNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYCssNode.swift; sourceTree = "<group>"; };
+		3D699F5E28E3E0730013FE9F /* KYRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYRender.swift; sourceTree = "<group>"; };
+		3D699F6028E3E6A90013FE9F /* KYWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYWrapper.swift; sourceTree = "<group>"; };
 		3DB5385328D422E8000754C7 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		3DDAE7AE28D166CB0038BE0E /* WebInterpreter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebInterpreter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAE7B128D166CB0038BE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				3D0D88E228D32C29007C402D /* KYCssNode.swift */,
 				3D0D88E028D3263A007C402D /* KYCssParser.swift */,
 				3DB5385328D422E8000754C7 /* UIColorExtensions.swift */,
+				3D699F5E28E3E0730013FE9F /* KYRender.swift */,
+				3D699F6028E3E6A90013FE9F /* KYWrapper.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -253,6 +259,8 @@
 				3DDAE7CD28D16FC40038BE0E /* KYHtmlToken.swift in Sources */,
 				3DDAE7C928D16B310038BE0E /* KYHtmlParser.swift in Sources */,
 				3DDAE7CB28D16B520038BE0E /* KYHtmlLexer.swift in Sources */,
+				3D699F5F28E3E0730013FE9F /* KYRender.swift in Sources */,
+				3D699F6128E3E6A90013FE9F /* KYWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

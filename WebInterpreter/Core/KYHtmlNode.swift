@@ -7,7 +7,7 @@
 
 import UIKit
 
-class KYHtmlNode: NSObject {
+class KYHtmlNode {
     var tagName: String = ""
     var attribute: [String: String] = [:]
     var text: String = ""

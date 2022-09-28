@@ -128,7 +128,7 @@ class KYCssLexer {
         case "0"..."9":
             return parseLength()
         case "#":
-            return .color(UIColor(hex: parseIdentifier()))
+            return .color(UIColor.ky.color(hex: parseIdentifier()))
         default:
             return .keyword(parseIdentifier())
         }
